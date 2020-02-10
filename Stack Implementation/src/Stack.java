@@ -1,30 +1,30 @@
 import java.util.ArrayList;
 
 
-public class Stack<T> {
+public class Stack<S> { //--> <T> allows you to generalize the TYPE stored in the class
 //	DJDave123 :)
-	private ArrayList<T> data;
+	private ArrayList<S> data; //<T> works b/c of line 3 which represents the TYPE as T
 	private int size;
 	
 	public Stack() {
-		data = new ArrayList<T>();
+		data = new ArrayList<S>();
 	}
 	
-	public void push(T t) {
-		data.add(t);
+	public void push(S s) {
+		data.add(s);
 		size++;
 	}
 	
 //	write a pop method
 //	to remove the top element from the list
-	public T pop() {
+	public S pop() {
 		size--;
 		return data.remove(size);
 	}
 
 //	write the method peek which returns the last element
 //	but does not remove it from the list
-	public T peek() {
+	public S peek() {
 //		size-- -> size = size - 1;
 		return data.get(size-1);
 	}
