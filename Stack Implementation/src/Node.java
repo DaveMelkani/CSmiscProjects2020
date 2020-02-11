@@ -1,7 +1,8 @@
 
 public class Node<T> {
 	private T data;
-	private Node next;
+	public Node next;
+	public Node back;
 	
 	public Node(T t) {
 		data = t;
@@ -12,5 +13,11 @@ public class Node<T> {
 		return next;
 	}
 	
+	public Node back() {
+		return back;
+	}
 	
+	public T getData() {
+		return data;
+	}
 }
