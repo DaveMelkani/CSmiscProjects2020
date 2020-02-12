@@ -14,6 +14,12 @@ public class Runner {
 		
 		Stack<Dave> daves = new Stack<Dave>();
 		daves.push(new Dave()); //shows you can have a seperate class
+		
+//		LinkedList<String> dabStrs = new LinkedList<String>();
+		
+		
+	
+		
 	}
 
 }

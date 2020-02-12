@@ -2,10 +2,11 @@
 public class Node<T> {
 	private T data;
 	public Node next;
-	public Node back;
+//	public Node back;
 	
 	public Node(T t) {
 		data = t;
+		this.next = null;
 	}
 	
 //	returns next ref
@@ -13,9 +14,7 @@ public class Node<T> {
 		return next;
 	}
 	
-	public Node back() {
-		return back;
-	}
+	
 	
 	public T getData() {
 		return data;

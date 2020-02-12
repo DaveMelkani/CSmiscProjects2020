@@ -5,6 +5,9 @@ public class LinkedList<A> { // <T> allows us to use any data type
 
 	// reference to the front of the list
 	private Node head;
+	
+	// reference to the end of the list
+	//private Node tail;
 
 	public LinkedList(int s) {
 		// job of the constructor is to
@@ -22,6 +25,9 @@ public class LinkedList<A> { // <T> allows us to use any data type
 	public Node peek() {
 		return head;
 	}
+	
+	
+	
 
 	// add a node at the end of the list!
 	public void add(A a) {
@@ -29,7 +35,8 @@ public class LinkedList<A> { // <T> allows us to use any data type
 		size++; // adding an element size increase!
 
 		if (head == null) {
-			 Node n = new Node(a); // create a new node that encapsulates the data a
+			Node n = new Node(a); // create a new node that
+			// encapsulates the data a
 			head = n; // head reference now points to this first node
 			return;
 		}
@@ -46,14 +53,23 @@ public class LinkedList<A> { // <T> allows us to use any data type
 
 	// add a node at the beginning of the list
 	public void addFront(A a) {
-		
+		Node test = new Node(a);
+		if(head == null) {
+//			if the list is empty -> head will point to newNode 
+			head = test;
+		}
+		else {
+			Node temp = head;
+			head = test;
+			head.next = temp;
+		}
 	}
 
 	// remove the head of the list
 	public Node remove() {
 		size--;
 		Node temp = head;
-		if(temp.next != null) {
+		if (temp.next != null) {
 			temp = temp.next;
 		}
 		temp = null;
