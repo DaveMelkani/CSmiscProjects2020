@@ -4,15 +4,15 @@ public class LinkedList<A> { // <T> allows us to use any data type
 	private int size;
 
 	// reference to the front of the list
-	private Node head;
+	private Node<A> head;
 	
 	// reference to the end of the list
 	//private Node tail;
 
-	public LinkedList(int s) {
+	public LinkedList() {
 		// job of the constructor is to
 		// initialize the instance variables
-		size = s;
+		size = 0;
 		head = null;
 	}
 
@@ -22,7 +22,7 @@ public class LinkedList<A> { // <T> allows us to use any data type
 	}
 
 	// returns the head reference
-	public Node peek() {
+	public Node<A> peek() {
 		return head;
 	}
 	
@@ -53,31 +53,50 @@ public class LinkedList<A> { // <T> allows us to use any data type
 
 	// add a node at the beginning of the list
 	public void addFront(A a) {
-		Node test = new Node(a);
-		if(head == null) {
-//			if the list is empty -> head will point to newNode 
-			head = test;
-		}
-		else {
-			Node temp = head;
-			head = test;
-			head.next = temp;
-		}
+		Node<A> temp = new Node<A>(a);//creating a new Node called temp 
+		temp.next = head;
+		head = temp;
+		size++;
 	}
 
 	// remove the head of the list
-	public Node remove() {
-		size--;
-		Node temp = head;
-		if (temp.next != null) {
-			temp = temp.next;
+	public Node<A> remove() {
+	/*	Node<A> temp = head;
+		if(head != null) {
+			head = head.next();
+			size--;
 		}
-		temp = null;
+		return temp;*/
+		if(head == null) {
+			return head;
+		}
+		Node<A> temp = head;
+		head = head.next;
+		temp.next = null;
 		return temp;
+		
 	}
 
 	// remove Node at index i -> REQUIRES: i < size
-	public Node remove(int i) {
+	public Node<A> remove(int i) {
+		if(i == 0) {
+			return remove();
+		}
+		else {
+			if(i+1 <= size && i >= 0) { //is i within the Node?
+				int c = 0; // creating my counter variable for each tic
+				Node<A> temp = head;
+				while(c != i-1) {
+					temp = temp.next();
+					c++;
+				}
+				Node<A> dab = temp.next();
+				temp.next = dab.next;
+				
+				size--;
+				return dab;
+			}
+		}
 		return null;
 	}
 
