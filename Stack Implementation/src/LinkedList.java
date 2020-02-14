@@ -61,19 +61,13 @@ public class LinkedList<A> { // <T> allows us to use any data type
 
 	// remove the head of the list
 	public Node<A> remove() {
-	/*	Node<A> temp = head;
+		Node<A> temp = head;
 		if(head != null) {
 			head = head.next();
 			size--;
 		}
-		return temp;*/
-		if(head == null) {
-			return head;
-		}
-		Node<A> temp = head;
-		head = head.next;
-		temp.next = null;
 		return temp;
+		
 		
 	}
 
