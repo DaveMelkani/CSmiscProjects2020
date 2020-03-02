@@ -15,10 +15,10 @@ public class KirbyRunner {
 			Scanner sc = new Scanner(file); // setup scanner
 			String j = sc.next();
 			int row = Integer.parseInt(j);
-			System.out.println(row);
+			System.out.print(row);
 			String l = sc.next();
 			int col = Integer.parseInt(l);
-			System.out.println(col);
+			System.out.print(col);
 			String k = sc.next();
 			int width = Integer.parseInt(k);
 			System.out.println(width);
