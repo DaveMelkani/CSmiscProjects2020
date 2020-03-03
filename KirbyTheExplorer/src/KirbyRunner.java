@@ -1,4 +1,5 @@
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,31 +9,31 @@ public class KirbyRunner {
 		// keep input file in the parent folder for the project
 		// not in the src folder
 		String i;
-		File file = new File("map1"); // point to file
+		File file = new File("map2"); // point to file
 
 		try {
 
 			Scanner sc = new Scanner(file); // setup scanner
 			String j = sc.next();
-			int row = Integer.parseInt(j);
-			System.out.print(row);
+			int x = Integer.parseInt(j);
+			System.out.print(x);
 			String l = sc.next();
-			int col = Integer.parseInt(l);
-			System.out.print(col);
+			int y = Integer.parseInt(l);
+			System.out.print(" "+y);
 			String k = sc.next();
-			int width = Integer.parseInt(k);
-			System.out.println(width);
-			String[][][] arr = new String[row][col][width];
-			for (int y = 0; y < width; y++) {
-				int counter = 0;
+			int z = Integer.parseInt(k);
+			System.out.println(" "+z);
+			String[][][] arr = new String[x][y][z];
+			for (int r = 0; r < z; r++) {
+				int cntr = 0;
 				// check a line exists in the input file
 				while (sc.hasNextLine()) {
 					// NOTE format of input file is expected
-					for (int cat = 0; counter < row; counter++) {
+					for (int c = 0; cntr < x; cntr++) {
 						i = sc.next();
-						for (int dog = 0; dog < col; dog++) {
+						for (int d = 0; d < y; d++) {
 							System.out.println(i);
-							arr[counter][dog][y] = i.substring(dog, dog + 1);
+							arr[cntr][d][r] = i.substring(d, d + 1);
 						}
 					}
 					// call nextInt()
