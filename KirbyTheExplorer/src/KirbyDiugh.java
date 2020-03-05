@@ -9,7 +9,7 @@ public class KirbyDiugh {
 		// keep input file in the parent folder for the project
 		// not in the src folder
 		String i;
-		File file = new File("map1"); // point to file
+		File file = new File("map2"); // point to file
 
 		try {
 
@@ -29,11 +29,21 @@ public class KirbyDiugh {
 			System.out.println(" "+r);
 			
 			String[][][] arr = new String[x][y][r];
-			for (int k = 0; k < r; k++) {
+			String test = sc.nextLine();
+			System.out.println(test);
+			
+//			try{
+//				if(!(test.length() == 0)) duck = Integer.parseInt(test.substring(test.length()-1));
+//				int davedab = Integer.parseInt(test.substring(test.length()-1));
+//				int footdab = Integer.parseInt(test.substring(test.length()-3, test.length()-2));
+//				String strdab = test.substring
+//			}
+			
 //				int cntr = 0;
 				// check a line exists in the input file
 				while (sc.hasNextLine()) {
 					// NOTE format of input file is expected
+					for (int k = 0; k < r; k++) {
 					for (int cntr = 0; cntr < x; cntr++) {
 //						i = sc.next();
 						String val = sc.next();
@@ -47,13 +57,14 @@ public class KirbyDiugh {
 				}
 			}
 			sc.close(); // done with scanner
-//			for (int ew = 0; ew < arr[0][0].length; ew++) {
-//				for (int qw = 0; qw < arr.length; qw++) {
-//					for (int wq = 0; wq < arr[0].length; wq++) {
-//						System.out.println(arr[qw][wq][ew]);
-//					}
-//				}
-//			}
+			for (int ew = 0; ew < arr[0][0].length; ew++) {
+				for (int qw = 0; qw < arr.length; qw++) {
+					for (int wq = 0; wq < arr[0].length; wq++) {
+						System.out.print(arr[qw][wq][ew]);
+					}
+					System.out.println();
+				}
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
