@@ -6,6 +6,8 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class KirbyDiugh {
+	
+	
 	public static void main(String[] args) {
 		// keep input file in the parent folder for the project
 		// not in the src folder
