@@ -5,7 +5,7 @@ public class Runner {
 		// TODO Auto-generated method stub
 		
 //			public static void 
-			Map m1 = new Map("map2");
+			Map m1 = new Map("map1cord");
 
 	}
 

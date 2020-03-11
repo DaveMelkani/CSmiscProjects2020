@@ -70,7 +70,7 @@ public class Map {
 
 		sc.close(); // done with scanner
 	}
-
+//try{
 	public void createMapFromCoords() {
 		sc.nextInt();
 		sc.nextInt();
@@ -80,21 +80,29 @@ public class Map {
 		int row = 0;
 		int roomNum = 0;
 		int j = 0;
+//		int[][] davedab = new int[5][4];
 		while (sc.hasNextLine()) {
 			String s = sc.next();
 			row = sc.nextInt();
 			j = sc.nextInt();
+			
 			if (row == 1) {
 				canIncrementRoom = true;
+				
 			}
 			if (canIncrementRoom && row == 0) {
+				
 				roomNum++;
+				
 				canIncrementRoom = false;
+				
 			}
 
 			arr[row][j][roomNum] = s;
+			
 
 		}
+		
 		for (int w = 0; w < numRooms; w++) {
 			for (int i = 0; i < height; i++) {
 				for (int c = 0; c < width; c++) {
@@ -108,7 +116,7 @@ public class Map {
 		System.out.println(Arrays.deepToString(arr));
 
 	}
-
+//} catch()
 	public void QueueMethod() {
 		ArrayDeque<int[]> queue = new ArrayDeque<int[]>();
 		ArrayDeque<int[]> dequeue = new ArrayDeque<int[]>();
