@@ -4,16 +4,17 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Map {
+public class KirbyPP {
 	File file;
 	Scanner sc;
 	Scanner s;
 	String[][][] arr;
+	// int davedab;
 	int height;
 	int width;
 	int numRooms;
 
-	public Map(String mapName) throws FileNotFoundException {
+	public KirbyPP(String mapName) throws FileNotFoundException {
 		file = new File(mapName); // point to file
 		sc = new Scanner(file);
 		height = sc.nextInt();
@@ -70,7 +71,8 @@ public class Map {
 
 		sc.close(); // done with scanner
 	}
-//try{
+
+	// try{
 	public void createMapFromCoords() {
 		sc.nextInt();
 		sc.nextInt();
@@ -80,29 +82,28 @@ public class Map {
 		int row = 0;
 		int roomNum = 0;
 		int j = 0;
-//		int[][] davedab = new int[5][4];
+		// int[][] davedab = new int[5][4];
 		while (sc.hasNextLine()) {
 			String s = sc.next();
 			row = sc.nextInt();
 			j = sc.nextInt();
-			
+
 			if (row == 1) {
 				canIncrementRoom = true;
-				
+
 			}
 			if (canIncrementRoom && row == 0) {
-				
+
 				roomNum++;
-				
+
 				canIncrementRoom = false;
-				
+
 			}
 
 			arr[row][j][roomNum] = s;
-			
 
 		}
-		
+
 		for (int w = 0; w < numRooms; w++) {
 			for (int i = 0; i < height; i++) {
 				for (int c = 0; c < width; c++) {
@@ -114,9 +115,10 @@ public class Map {
 			}
 		}
 		System.out.println(Arrays.deepToString(arr));
-
+		
 	}
-//} catch()
+
+	// } catch()
 	public void QueueMethod() {
 		ArrayDeque<int[]> queue = new ArrayDeque<int[]>();
 		ArrayDeque<int[]> dequeue = new ArrayDeque<int[]>();
@@ -146,12 +148,12 @@ public class Map {
 	}
 
 	public int[] checkEast(int[] arr) {
-		arr[0] = arr[0] - 1;
+		arr[0] = arr[0] + 1;
 		return arr;
 	}
 
 	public int[] checkWest(int[] arr) {
-		arr[0] = arr[0] + 1;
+		arr[0] = arr[0] - 1;
 		return arr;
 	}
 
