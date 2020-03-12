@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class KirbyPP {
+public class Kirby {
 	File file;
 	Scanner sc;
 	Scanner s;
@@ -14,7 +14,7 @@ public class KirbyPP {
 	int width;
 	int numRooms;
 
-	public KirbyPP(String mapName) throws FileNotFoundException {
+	public Kirby(String mapName) throws FileNotFoundException {
 		file = new File(mapName); // point to file
 		sc = new Scanner(file);
 		height = sc.nextInt();

@@ -5,7 +5,7 @@ public class Runner {
 		// TODO Auto-generated method stub
 		
 //			public static void 
-			KirbyPP pp = new KirbyPP("map1cord");
+			Kirby pp = new Kirby("map1cord");
 
 	}
 
