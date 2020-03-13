@@ -17,6 +17,7 @@ public class Kirby {
 	public Kirby(String mapName) throws FileNotFoundException {
 
 		file = new File(mapName); // point to file
+//		try{
 		sc = new Scanner(file);
 		height = sc.nextInt();
 		width = sc.nextInt();
@@ -38,6 +39,7 @@ public class Kirby {
 			sc = new Scanner(file);
 			createMapFromText();
 		}
+//	}
 	}
 
 	public void createMapFromText() {
@@ -121,7 +123,9 @@ public class Kirby {
 		
 	}
 
-	// } catch()
+//	 } catch(FileNotFoundException e) {
+//		 e.printStackTrace();
+//	 }
 	public void QueueMethod() {
 
 		ArrayDeque<int[]> queue = new ArrayDeque<int[]>();
@@ -183,3 +187,7 @@ public class Kirby {
 
 	}
 }
+
+//class dabb {
+//	
+//}
