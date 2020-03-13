@@ -15,6 +15,7 @@ public class Kirby {
 	int numRooms;
 
 	public Kirby(String mapName) throws FileNotFoundException {
+
 		file = new File(mapName); // point to file
 		sc = new Scanner(file);
 		height = sc.nextInt();
@@ -40,6 +41,7 @@ public class Kirby {
 	}
 
 	public void createMapFromText() {
+
 		sc.nextInt();
 		sc.nextInt();
 		sc.nextInt();
@@ -74,6 +76,7 @@ public class Kirby {
 
 	// try{
 	public void createMapFromCoords() {
+
 		sc.nextInt();
 		sc.nextInt();
 		sc.nextInt();
@@ -120,6 +123,7 @@ public class Kirby {
 
 	// } catch()
 	public void QueueMethod() {
+
 		ArrayDeque<int[]> queue = new ArrayDeque<int[]>();
 		ArrayDeque<int[]> dequeue = new ArrayDeque<int[]>();
 		int[] kirbyLocation = findSymbol("K", 1);
@@ -131,10 +135,12 @@ public class Kirby {
 		queue.add(checkSouth(dequeued));
 		queue.add(checkEast(dequeued));
 		queue.add(checkWest(dequeued));
+//		queue.spliterator();
 
 	}
 
 	public int[] checkNorth(int[] arr) {
+
 		arr[1] = arr[1] - 1;
 		if (this.arr[arr[0]][arr[1]][0].equals("C")) {
 			System.out.println("Cake has been found");
@@ -143,21 +149,25 @@ public class Kirby {
 	}
 
 	public int[] checkSouth(int[] arr) {
+
 		arr[1] = arr[1] + 1;
 		return arr;
 	}
 
 	public int[] checkEast(int[] arr) {
+
 		arr[0] = arr[0] + 1;
 		return arr;
 	}
 
 	public int[] checkWest(int[] arr) {
+
 		arr[0] = arr[0] - 1;
 		return arr;
 	}
 
 	public int[] findSymbol(String s, int n) {
+
 		int[] coords = new int[2];
 		for (int i = 0; i < height; i++) {
 			for (int c = 0; c < width; c++) {

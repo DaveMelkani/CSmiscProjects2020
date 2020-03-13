@@ -6,7 +6,7 @@ public class Runner {
 		
 //			public static void 
 			Kirby pp = new Kirby("map1cord");
-
+ 
 	}
 
 }
